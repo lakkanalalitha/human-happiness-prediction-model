@@ -32,7 +32,7 @@ def predict():
 	else:
 		text = "You are LESS HAPPIER person !!! "
 	
-	return render_template('index.html', prob_accuracy = 'Model Confidence: ----- ' + str(confidence_measure),  prob_text= 'Model Result: ----- ' + str(text))	
+	return render_template('index.html', your_input = 'Your Input Scores: ----- ' + str(unseen_x), prob_accuracy = 'Model Confidence: ----- ' + str(confidence_measure),  prob_text= 'Model Result: ----- ' + str(text))	
 
 
 if __name__ == "__main__":
