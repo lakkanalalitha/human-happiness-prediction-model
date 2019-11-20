@@ -28,11 +28,11 @@ def predict():
 	pred_target = prob[0]
 	
 	if(pred_target == 1):
-		text = "You are more happier person !!!"
+		text = "You are MORE HAPPIER person !!!"
 	else:
-		text = "You are less happier person !!! "
+		text = "You are LESS HAPPIER person !!! "
 	
-	return render_template('index.html', prob_accuracy = 'Model Confidence:----- ' + str(confidence_measure),  prob_text= 'Model Result:----- ' + str(text))	
+	return render_template('index.html', prob_accuracy = 'Model Confidence: ----- ' + str(confidence_measure),  prob_text= 'Model Result: ----- ' + str(text))	
 
 
 if __name__ == "__main__":
