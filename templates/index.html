@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  body {
+        padding: 50px;
+      }
+      .plots {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      #data, #random, #trained {
+        margin: 30px;
+      }
+      .caption {
+       font-weight: bold;
+	   margin: 5px;
+	   font-size: 15px;
+      }
+      .coeff {
+        font-weight: normal;
+      }
+      #data-plot, #random-plot, #trained-plot {
+	    margin:20px;
+	  }
+	 </style>
+</head>
+
+<body>
+ <div class="login" id="data-plot" style="margin:50px">
+	<h3>How good you are being happy in your Life !!!!</h3>
+   
+     <!-- Main Input For Receiving Query to our ML -->
+    <form align="left" action="{{ url_for('predict')}}" method="post" >
+	  <div class=" rows " id="data-plot" style="border:1px solid; width: 400px; float:left">
+	    <div  class="xlarge-4 columns " id="data-plot">
+			<label>How strong in Family Relationships Management ?</label><br/>
+			<input type="text" name="family" placeholder="Score out of 10" required="required" />
+		</div>
+	    <div  class="xlarge-4  " id="data-plot">
+			<label>How strong Emotionally ?</label> <br/>
+			<input type="text" name="emotional" placeholder="Score out of 10" required="required" />
+		</div>
+		<div  class="xlarge-4  columns" id="data-plot">
+			<label>How strong Physically ?</label><br/>
+			<input type="text" name="physical" placeholder="Score out of 10" required="required" />
+		</div>
+		<div  class="xlarge-4 columns" id="data-plot">
+			<label>How strong Financially ?</label><br/>
+			<input type="text" name="financial" placeholder="Score out of 10" required="required" />
+		</div>		
+		<div  class="xlarge-4 columns" id="data-plot">
+			<label>Job Satisfaction ?</label><br/>
+			<input type="text" name="job" placeholder="Score out of 10" required="required" />
+		</div>		
+		<div class="plots row" id="data-plot">		
+			<div id="data-plot" align="center">
+				<button type="submit"  class="btn btn-primary   ">Know How Much You Are Happier !!!!</button>
+			</div>
+      </div>  
+	 </div>
+	 <div class=" rows " id="data-plot" style=" width: 800px; float:right; margin-right:100px;">
+	    <b>{{ prob_accuracy }}</b>   </br>
+		<b>{{ prob_text }}</b>   </br>		
+	 </div>
+	 
+	 </div>
+    </form>
+
+   <br>
+   <br>
+   
+ </div>
+
+
+</body>
+</html>
